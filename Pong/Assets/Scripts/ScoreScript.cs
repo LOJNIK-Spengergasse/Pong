@@ -8,6 +8,7 @@ using UnityEngine.UI;
 public class ScoreScript : MonoBehaviour
 {
     private TMP_Text _tx;
+    [SerializeField] private int _winCond;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class ScoreScript : MonoBehaviour
 
     private void LateUpdate()
     {
-        if(GlobalData.RightScore>=10 || GlobalData.LeftScore>=10) EndGame();
+        if(GlobalData.RightScore>=_winCond || GlobalData.LeftScore>=_winCond) EndGame();
     }
 
     public void EndGame()

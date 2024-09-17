@@ -13,15 +13,15 @@ public class BallScript : MonoBehaviour
     void Start()
     {
         _rb = GetComponent<Rigidbody2D>();
-        _rb.position = new Vector3(0f,0f,0f);
-        //x-Range: -2.5 - 2.5 y-Range: -2 - 2
-        _rb.velocity = new Vector2(GlobalData.LastWin*_speed, 0);
+        GlobalData.LeftScore = 0;
+        GlobalData.RightScore = 0;
+        ResetBall();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void ResetBall()
     {
-        
+        _rb.position = new Vector3(0f, 0f, 0f);
+        _rb.velocity = new Vector2(GlobalData.LastWin * _speed, 0);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -30,14 +30,14 @@ public class BallScript : MonoBehaviour
         {
             GlobalData.RightScore++;
             GlobalData.LastWin = -1;
-            Start();
+            ResetBall();
             return;
         }
         if (collision.name == "WallRight")
         {
             GlobalData.LeftScore++;
             GlobalData.LastWin = 1;
-            Start();
+            ResetBall();
             return;
         }
     }

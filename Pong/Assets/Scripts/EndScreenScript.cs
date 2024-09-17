@@ -14,6 +14,6 @@ public class EndScreenScript : MonoBehaviour
     void Start()
     {
         TextWinner.text = (GlobalData.LastWin == 1) ? "Player Left Wins" : "Player Right Wins";
-        TextEndScore.text = (GlobalData.LastWin == 1) ? $"{GlobalData.LeftScore} : {GlobalData.LeftScore}": $"{GlobalData.RightScore} : {GlobalData.RightScore}";
+        TextEndScore.text = (GlobalData.LastWin == 1) ? $"{GlobalData.LeftScore} : {GlobalData.RightScore}": $"{GlobalData.RightScore} : {GlobalData.LeftScore}";
     }
 }
