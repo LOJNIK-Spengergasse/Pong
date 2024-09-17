@@ -10,16 +10,4 @@ public class StartMenuScript : MonoBehaviour
     {
         SceneManager.LoadScene("PongScene");
     }
-    
-    
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

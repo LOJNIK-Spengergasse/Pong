@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ScoreScript : MonoBehaviour
@@ -19,5 +20,15 @@ public class ScoreScript : MonoBehaviour
     {
         if (_tx.name == "RightScore") _tx.text = $"{GlobalData.RightScore}";
         else if (_tx.name == "LeftScore") _tx.text = $"{GlobalData.LeftScore}";
+    }
+
+    private void LateUpdate()
+    {
+        if(GlobalData.RightScore>=10 || GlobalData.LeftScore>=10) EndGame();
+    }
+
+    public void EndGame()
+    {
+        SceneManager.LoadScene("EndScene");
     }
 }
