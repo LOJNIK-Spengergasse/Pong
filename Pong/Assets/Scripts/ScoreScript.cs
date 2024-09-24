@@ -22,14 +22,4 @@ public class ScoreScript : MonoBehaviour
         if (_tx.name == "RightScore") _tx.text = $"{GlobalData.RightScore}";
         else if (_tx.name == "LeftScore") _tx.text = $"{GlobalData.LeftScore}";
     }
-
-    private void LateUpdate()
-    {
-        if(GlobalData.RightScore>=_winCond || GlobalData.LeftScore>=_winCond) EndGame();
-    }
-
-    public void EndGame()
-    {
-        SceneManager.LoadScene("EndScene");
-    }
 }

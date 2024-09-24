@@ -10,4 +10,23 @@ public class StartMenuScript : MonoBehaviour
     {
         SceneManager.LoadScene("PongScene");
     }
+
+    public void NormalGame()
+    {
+        GlobalData.isAI = false;
+        StartGame();
+    }
+    public void ComGame()
+    {
+        GlobalData.isAI = true;
+        GlobalData.AIerrorRange = 0.2f;
+        StartGame();
+    }
+
+    public void ComGameH()
+    {
+        GlobalData.isAI = true;
+        GlobalData.AIerrorRange = 0.1f;
+        StartGame();
+    }
 }

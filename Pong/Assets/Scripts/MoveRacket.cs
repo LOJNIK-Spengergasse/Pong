@@ -38,7 +38,7 @@ public class MoveRacket : MonoBehaviour
     //For physics, own updatetime, not dependant on Framerate
     void FixedUpdate()
     {
-        if(_moveUp)
+        if (_moveUp)
         {
             transform.Translate(new Vector2(0.0f, _moveSpeed));
             _moveUp = false;
